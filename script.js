@@ -1,0 +1,1 @@
+console.dir(document); // full page document print
