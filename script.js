@@ -13,7 +13,7 @@ document.title = 'Hello DOM'; // dynamically change object property
 
 // Traversing DOM Elements
 // Get element by ID
-console.log(document.getElementById('new-task')); // get full element...getElementById is in prototype
+console.log(document.getElementById('new-task')); // get full element by id...getElementById is in prototype
 
 let headerElement = document.getElementById('header');
 console.log(headerElement.textContent); // get text from code
@@ -24,3 +24,13 @@ headerElement.textContent = 'TO-DO APP';
 headerElement.innerText = 'TOO-DO APP';
 headerElement.style.color = 'red'; // dynamially set color to text
 headerElement.style.fontSize = '50px'; // from javascript to write css '-' should be capital letter
+
+
+//Get elements by class
+console.log(document.getElementsByClassName('item')); // get full elements by class (multiple class)
+//let item = document.getElementsByClassName('item'); //for all class
+let itemUl = document.getElementById('items'); // for specific element
+let item = itemUl.getElementsByClassName('item');
+for(let i = 0; i < item.length; i++) {
+    item[i].style.color = 'red';
+}
