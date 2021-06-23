@@ -34,3 +34,32 @@ let item = itemUl.getElementsByClassName('item');
 for(let i = 0; i < item.length; i++) {
     item[i].style.color = 'red';
 }
+
+//Get elements by tag name
+let itemLi = document.getElementsByTagName('li');
+console.log(itemLi);
+
+
+// Query Selector
+let header = document.querySelector('.header'); // #for id and . for class
+console.log(header);
+
+let lastItem = document.querySelector('.item:last-child'); // always retuen only one data
+console.log(lastItem);
+lastItem.style.color = 'blue';
+
+let lastItems = document.querySelectorAll('.item:last-child'); // return multuple last item
+console.log(lastItems);
+for(let element of lastItems) {
+    element.style.color = 'green';
+}
+
+let nthItem = document.querySelector('.item:nth-child(2)'); //for any chilf
+console.log(nthItem);
+nthItem.style.color = 'black';
+
+let nthItems = document.querySelectorAll('.item:nth-child(2)'); //for any chilf
+console.log(nthItems);
+for(let element of nthItems) {
+    element.style.color = 'black';
+}
