@@ -123,3 +123,28 @@ console.log(a);
 console.log(b);
 
 container.append(divElement, document.createElement('p'), 'Hello World'); //can append multiple elements and a text at same time
+
+
+
+
+// Event Listeners
+
+const headerElementListener = document.querySelector('#header');
+headerElementListener.addEventListener('click', (evevnt)=>{
+   console.log(evevnt); 
+});
+
+const inputElement = document.querySelector('input[type="text"]');
+console.log(inputElement.value);
+inputElement.addEventListener('keyup', (evevnt)=>{
+    console.log(evevnt.target);
+    console.log(evevnt.target.value);
+ });
+
+const formElement = document.querySelector('form');
+formElement.addEventListener('submit', (evevnt)=>{
+    evevnt.preventDefault();
+    console.log(evevnt.target);
+    console.log(evevnt.target.value);
+    console.log(inputElement.value);
+ });
