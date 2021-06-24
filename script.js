@@ -41,6 +41,10 @@ console.log(itemLi);
 
 
 // Query Selector
+
+// document.querySelector for single element
+//document.querySelectorAll for all elements of collection
+
 let header = document.querySelector('.header'); // #for id and . for class
 console.log(header);
 
@@ -54,12 +58,44 @@ for(let element of lastItems) {
     element.style.color = 'green';
 }
 
-let nthItem = document.querySelector('.item:nth-child(2)'); //for any chilf
+let nthItem = document.querySelector('.item:nth-child(2)'); //for any child
 console.log(nthItem);
 nthItem.style.color = 'black';
 
-let nthItems = document.querySelectorAll('.item:nth-child(2)'); //for any chilf
+let nthItems = document.querySelectorAll('.item:nth-child(2)'); //for any child
 console.log(nthItems);
 for(let element of nthItems) {
     element.style.color = 'black';
 }
+
+
+//parent child relation
+
+// parent to child
+
+const grandParent = document.querySelector('.todo-list');
+const parent = grandParent.children;
+//const parent = document.querySelector('#items');
+console.log(parent);
+//const children = parent.children;
+const children = parent[1].children; // if multiple children
+console.log(children);
+console.log(children[0]);
+
+const decendantyChildren = grandParent.querySelectorAll('.item'); // grandparent to children
+console.log(decendantyChildren);
+
+
+// child to parent
+const childrenElement = document.querySelector('.item'); // querySelector up to bottom
+const parentElement = childrenElement.parentElement;
+console.log(parentElement);
+
+const closestGrandParent = childrenElement.closest('.todo-list'); // closest bottom to up
+console.log(closestGrandParent);
+
+
+// siblings
+const childrenOne = document.querySelector('.item');
+const childrenTwo = childrenOne.nextElementSibling; // next sibling
+console.log(childrenTwo);
