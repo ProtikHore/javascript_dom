@@ -99,3 +99,27 @@ console.log(closestGrandParent);
 const childrenOne = document.querySelector('.item');
 const childrenTwo = childrenOne.nextElementSibling; // next sibling
 console.log(childrenTwo);
+
+
+
+// creating an element
+
+const divElement = document.createElement('div');
+console.log(divElement);
+console.dir(divElement);
+divElement.className = 'red';
+divElement.setAttribute('id', 'red');
+divElement.setAttribute('title', 'Red Div');
+
+const container = document.querySelector('.todo-list');
+const h2Element = container.querySelector('h2');
+container.insertBefore(divElement, h2Element);
+container.appendChild(divElement); // must be a html element; can append only one element at a time
+container.append(divElement); // can be a html element or a text; can append multiple elements and a text at same time
+
+const a = container.appendChild(divElement); // return element
+const b = container.append(divElement); // not return anything
+console.log(a);
+console.log(b);
+
+container.append(divElement, document.createElement('p'), 'Hello World'); //can append multiple elements and a text at same time
