@@ -3,6 +3,8 @@
 let newTask = document.querySelector('#new-task');
 let form = document.querySelector('form');
 let incompleteLists = document.querySelector('#items');
+console.log(incompleteLists);
+console.log(incompleteLists.children);
 let completeLists = document.querySelector('.complete-list ul');
 
 //console.log(completeLists);
@@ -72,6 +74,14 @@ let bindCompleteItems = function(taskItem, deleteButtonClick) {
     console.log(6);
     let deleteButton = taskItem.querySelector('.delete');
     deleteButton.onclick = deleteButtonClick;
+}
+
+for(let i = 0; i < incompleteLists.children.length; i++) {
+    bindIncompleteItems(incompleteLists.children[i], completeTask);
+}
+
+for(let i = 0; i < completeLists.children.length; i++) {
+    bindCompleteItems(completeLists.children[i], deleteTask);
 }
 
 form.addEventListener('submit', addTask);
